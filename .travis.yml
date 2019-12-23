@@ -23,7 +23,7 @@ jobs:
         - POPULATE_IMAGE=ibmcase/populate
       before_script:
       # Pull the CouchDB Docker image
-      - docker pull couchdb:2.1.2
+      - docker pull couchdb:2.3.1
       # Setup and run CouchDB
       - docker run -p ${CDB_PORT}:5984 -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=passw0rd -d couchdb --hostname cloudant.dev
       # Wait for CouchDB to Start
