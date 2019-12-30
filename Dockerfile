@@ -1,6 +1,6 @@
 FROM websphere-liberty:19.0.0.9-microProfile3
 
-MAINTAINER IBM Java engineering at IBM Cloud
+LABEL MAINTAINER="IBM Java engineering at IBM Cloud"
 
 USER root
 COPY /target/liberty/wlp/usr/servers/defaultServer /config/

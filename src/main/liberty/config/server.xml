@@ -21,11 +21,12 @@
   <mpJwt
     id="${env.jwtid}"
     jwksUri="${env.jwksUri}"
-    issuer="${env.jwksIssuer}">
+    issuer="${env.jwksIssuer}"
+    keyName="bc">
   </mpJwt>
 
   <!-- for mpConfig / mpRestClient -->
-  <variable name="application.rest.client.CouchDBClientService/mp-rest/url" value="http://${COUCHDB_HOST}:${COUCHDB_PORT}"/>
+  <variable name="application.rest.client.CouchDBClientService/mp-rest/url" value="http://${env.COUCHDB_HOST}:${env.COUCHDB_PORT}"/>
 
   <!--Credentials necessary to authorize user-->
   <administrator-role>
