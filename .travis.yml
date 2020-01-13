@@ -14,6 +14,7 @@ jobs:
       env:
         - zipkinHost=localhost
         - zipkinPort=9411
+        - jwtid=myMpJwt
         - jwksUri=https://localhost:9443/oidc/endpoint/OP/jwk
         - jwksIssuer=https://localhost:9443/oidc/endpoint/OP
         - administratorRealm=https://localhost:9443/oidc/endpoint/OP
@@ -49,8 +50,8 @@ jobs:
       - mv microprofile-config.properties.local microprofile-config.properties # Make main
       - cd -
       # Create Auth, put keystore in, and start it
-      - docker pull kevinwlau/auth-mp:1.1
-      - docker create --name auth -p 9443:9443 -p 9080:9080 kevinwlau/auth-mp:1.1
+      - docker pull ibmcase/auth-mp:v3.0.0
+      - docker create --name auth -p 9443:9443 -p 9080:9080 ibmcase/auth-mp:v3.0.0
       - docker cp keystorevol auth:/etc/
       - docker start auth
       script:
