@@ -14,6 +14,7 @@ import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 
 @ApplicationScoped
+@Health
 public class HealthEndpoint implements HealthCheck {
 
 	private Config config = ConfigProvider.getConfig();
