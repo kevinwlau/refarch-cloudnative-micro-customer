@@ -18,7 +18,9 @@ jobs:
         - jwksIssuer=https://localhost:9443/oidc/endpoint/OP
         - administratorRealm=https://localhost:9443/oidc/endpoint/OP
         - customerHttpPort=9084
-        - customerHttpsPort=9445        
+        - customerHttpsPort=9445      
+        - COUCHDB_HOST=localhost
+        - COUCHDB_PORT=5984  
         - CDB_PORT=5984
       before_script:
       # Pull the CouchDB Docker image
