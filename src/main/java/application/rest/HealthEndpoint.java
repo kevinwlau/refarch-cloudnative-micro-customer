@@ -10,11 +10,13 @@ import javax.net.ssl.HttpsURLConnection;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
+import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 
-@ApplicationScoped
+
 @Health
+@ApplicationScoped
 public class HealthEndpoint implements HealthCheck {
 
 	private Config config = ConfigProvider.getConfig();
