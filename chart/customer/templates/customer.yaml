@@ -85,6 +85,10 @@ spec:
             value: "{{ .Release.Name }}-{{ .Values.service.zipkinHost }}"
           - name: zipkinPort
             value: "{{ .Values.service.zipkinPort }}"
+          - name: COUCHDB_HOST
+            value: "{{ .Values.couchdb.host }}"
+          - name: COUCHDB_PORT
+            value: "{{ .Values.couchdb.port }}"
         resources:
           requests:
             memory: "{{ .Values.image.resources.requests.memory }}"
