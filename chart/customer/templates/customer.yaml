@@ -71,8 +71,6 @@ spec:
           - name: auth_health
             value: "https://{{ .Release.Name }}-{{ .Values.service.auth }}:9443/health"
         {{ end }}
-          - name: host
-            value: "{{ .Values.service.dbService }}"
           - name: PORT
             value: "{{ .Values.service.servicePort }}"
           - name: RELEASE_NAME
@@ -84,7 +82,7 @@ spec:
           - name: zipkinPort
             value: "{{ .Values.service.zipkinPort }}"
           - name: COUCHDB_HOST
-            value: "{{ .Values.couchdb.host }}"
+            value: "{{ .Release.Name }}-{{ .Values.couchdb.hostSuffix }}"
           - name: COUCHDB_PORT
             value: "{{ .Values.couchdb.port }}"
         resources:
